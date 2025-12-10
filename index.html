@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reporte: Análisis de Código LLMs con ANTLR</title>
+    <title>Reporte Final: Análisis de Código LLMs</title>
     <style>
-        /* Estilos Generales para dar formato de Reporte Profesional */
         :root {
-            --primary: #1b3a57; /* Azul Tecnológico */
+            --primary: #1b3a57;
             --secondary: #476b8a;
             --accent: #e74c3c;
             --light: #f4f7f6;
             --dark: #2c3e50;
+            --btn-color: #27ae60;
         }
 
         body {
@@ -24,7 +24,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
             background: white;
             padding: 50px;
@@ -32,143 +32,48 @@
             border-radius: 8px;
         }
 
-        /* Encabezado */
-        header {
-            text-align: center;
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 20px;
-            margin-bottom: 40px;
-        }
+        /* Header */
+        header { text-align: center; border-bottom: 2px solid var(--primary); padding-bottom: 20px; margin-bottom: 30px; }
+        .logos { display: flex; justify-content: center; gap: 20px; margin-bottom: 15px; flex-wrap: wrap; }
+        .logos img { height: 55px; width: auto; }
+        h1 { color: var(--primary); margin: 10px 0; font-size: 2rem; }
+        
+        /* Textos */
+        h2 { color: var(--secondary); border-left: 5px solid var(--accent); padding-left: 15px; margin-top: 40px; }
+        h3 { background-color: var(--primary); color: white; padding: 12px; border-radius: 4px; margin-top: 40px; }
+        h4 { color: var(--dark); border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-top: 30px; }
 
-        .logos {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .logos img {
-            height: 60px;
-            width: auto;
-        }
-
-        h1 {
-            color: var(--primary);
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            color: var(--secondary);
-            border-left: 5px solid var(--accent);
-            padding-left: 15px;
-            margin-top: 40px;
-            font-size: 1.8rem;
-        }
-
-        h3 {
-            background-color: var(--primary);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 4px;
-            margin-top: 30px;
-        }
-
-        h4 {
-            color: var(--dark);
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-            margin-top: 25px;
-        }
-
-        /* Información del Alumno */
-        .info-box {
-            background: var(--light);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            margin-bottom: 30px;
-        }
-
-        .info-box p {
-            margin: 5px 0;
-        }
+        /* Cajas de Info */
+        .info-box { background: var(--light); padding: 15px; border-radius: 5px; border: 1px solid #ddd; margin-bottom: 20px; }
+        .prompt-box { background-color: #fff8e1; padding: 15px; border-left: 4px solid #ffc107; margin: 20px 0; font-family: 'Consolas', monospace; font-size: 0.9em; color: #555; }
 
         /* Tablas */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        th, td { padding: 12px; text-align: center; border-bottom: 1px solid #ddd; }
+        th { background-color: var(--secondary); color: white; }
+        tr:nth-child(even) { background-color: #f8f9fa; }
 
-        th, td {
-            padding: 12px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: var(--secondary);
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-
-        /* Evidencias e Imágenes */
-        .evidence {
-            border: 1px solid #eee;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-        }
-
-        .evidence img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ccc;
-            box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-            margin-top: 10px;
-            border-radius: 4px;
-        }
-
-        .download-link {
+        /* Evidencias */
+        .evidence-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .evidence-card { border: 1px solid #eee; padding: 15px; border-radius: 8px; background: #fff; }
+        .evidence-card img { max-width: 100%; height: auto; border: 1px solid #ccc; margin-top: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); }
+        
+        /* Botones de Descarga */
+        .btn-download {
             display: inline-block;
-            margin-top: 5px;
-            color: var(--accent);
+            background-color: var(--btn-color);
+            color: white;
+            padding: 8px 15px;
             text-decoration: none;
+            border-radius: 4px;
             font-weight: bold;
             font-size: 0.9em;
+            margin-top: 10px;
+            transition: background 0.3s;
         }
+        .btn-download:hover { background-color: #219150; }
 
-        .download-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Prompt Description */
-        .prompt-desc {
-            font-style: italic;
-            background-color: #fff8e1;
-            padding: 15px;
-            border-left: 4px solid #ffc107;
-            margin-bottom: 20px;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            color: #777;
-            font-size: 0.9em;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-        }
+        footer { text-align: center; margin-top: 50px; color: #777; font-size: 0.9em; border-top: 1px solid #eee; padding-top: 20px; }
     </style>
 </head>
 <body>
@@ -182,18 +87,11 @@
         </div>
         <h1>Análisis de Código Generado por LLMs con ANTLR</h1>
         <p><strong>INSTITUTO TECNOLÓGICO DE MORELIA</strong></p>
-        <p>José María Morelos y Pavón</p>
     </header>
 
     <div class="info-box">
-        <p><strong>Presentan:</strong></p>
-        <ul>
-            <li>Benjamín Castillo Garcia (NC: 22120642)</li>
-            <li>Salvador Chavez Acosta (NC: 22120644)</li>
-            <li><strong>Marco Antonio Morelos Martinez (NC: 21121553)</strong></li>
-        </ul>
-        <p><strong>Profesor:</strong> J. Guadalupe Ramos Diaz</p>
-        <p><strong>Fecha:</strong> Diciembre 2025</p>
+        <p><strong>Presentan:</strong> Benjamín Castillo Garcia, Salvador Chavez Acosta, <strong>Marco Antonio Morelos Martinez (NC: 21121553)</strong></p>
+        <p><strong>Profesor:</strong> J. Guadalupe Ramos Diaz | <strong>Fecha:</strong> Diciembre 2025</p>
     </div>
 
     <section>
@@ -213,22 +111,14 @@
     <section>
         <h2>3. Resultados Experimentales</h2>
 
-        <h3>PROMPT 1: Estadística de Arreglos</h3>
-        <div class="prompt-desc">
-            "Generar un programa que llene un arreglo con 200 enteros aleatorios (1-1000) y calcule moda, media y mediana."
+        <h3 id="prompt1">PROMPT 1: Estadística de Arreglos</h3>
+        <div class="prompt-box">
+            <strong>Prompt Utilizado:</strong><br>
+            [cite_start]"Write a Java program that fills an array of integers with 200 random integer values. The random values must be in the range of 1 to 1000. The program should print the 200 values to the console, calculate and print the mode, calculate and print the median, and calculate and print the mean. The generated program must be contained in a single file named Prompt1.java." [cite: 241]
         </div>
 
         <table>
-            <thead>
-                <tr>
-                    <th>Modelo</th>
-                    <th>For</th>
-                    <th>While</th>
-                    <th>Do While</th>
-                    <th>Switch</th>
-                    <th>If</th>
-                </tr>
-            </thead>
+            <thead><tr><th>Modelo</th><th>For</th><th>While</th><th>Do While</th><th>Switch</th><th>If</th></tr></thead>
             <tbody>
                 <tr><td>Gpt-oss</td><td>5</td><td>0</td><td>0</td><td>0</td><td>3</td></tr>
                 <tr><td>Qwen3-vl</td><td>6</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
@@ -238,41 +128,28 @@
             </tbody>
         </table>
 
-        <h4>Evidencia Visual (Ejemplos Seleccionados)</h4>
-        
-        <div class="evidence">
-            <p><strong>1. Modelo: Gpt-oss</strong></p>
-            <p>Código Generado:</p>
-            <img src="images/image28.png" alt="Código GPT">
-            <p>Compilación:</p>
-            <img src="images/image24.png" alt="Compilación GPT">
-        </div>
+        <h4>Evidencias y Código Fuente</h4>
+        <div class="evidence-grid">
+            <div class="evidence-card">
+                <strong>1. Modelo: Gpt-oss</strong><br>
+                <a href="https://drive.google.com/file/d/1zmcFb9_0hi7qUfDmxMRx2dZagXnhVYl0/view?usp=sharing" target="_blank" class="btn-download">💾 Ver Código Fuente</a>
+                <br><img src="images/image24.png" alt="Compilación GPT">
+            </div>
+            <div class="evidence-card">
+                <strong>2. Modelo: Qwen3-vl</strong><br>
+                <a href="https://drive.google.com/file/d/1oFPlEZTWw-wBz6MyElcI8T9CaPV71QOj/view?usp=sharing" target="_blank" class="btn-download">💾 Ver Código Fuente</a>
+                <br><img src="images/image53.png" alt="Compilación Qwen">
+            </div>
+            </div>
 
-        <div class="evidence">
-            <p><strong>2. Modelo: Qwen3-vl</strong></p>
-            <img src="images/image44.png" alt="Código Qwen">
-            <img src="images/image53.png" alt="Compilación Qwen">
-        </div>
-
-        </section>
-
-    <section>
-        <h3>PROMPT 2: Ordenamiento Quicksort</h3>
-        <div class="prompt-desc">
-            "Generar un programa que llene un arreglo y lo ordene usando el método Quicksort."
+        <h3 id="prompt2">PROMPT 2: Ordenamiento Quicksort</h3>
+        <div class="prompt-box">
+            <strong>Prompt Utilizado:</strong><br>
+            [cite_start]"Write a Java program that fills an array of integers with 200 random integer values. The random values must be in the range of 1 to 1000. Sort the array using the quicksort method and print the sorted array. The generated program must be contained in a single file named Prompt2.java." [cite: 397]
         </div>
 
         <table>
-            <thead>
-                <tr>
-                    <th>Modelo</th>
-                    <th>For</th>
-                    <th>While</th>
-                    <th>Do While</th>
-                    <th>Switch</th>
-                    <th>If</th>
-                </tr>
-            </thead>
+            <thead><tr><th>Modelo</th><th>For</th><th>While</th><th>Do While</th><th>Switch</th><th>If</th></tr></thead>
             <tbody>
                 <tr><td>Gpt-oss</td><td>5</td><td>0</td><td>0</td><td>0</td><td>3</td></tr>
                 <tr><td>Qwen3-vl</td><td>3</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
@@ -282,30 +159,26 @@
             </tbody>
         </table>
 
-        <div class="evidence">
-            <p><strong>Ejemplo: Gpt-oss</strong></p>
-            <img src="images/image58.png" alt="Código">
-            <img src="images/image25.png" alt="Compilación">
+        <div class="evidence-grid">
+            <div class="evidence-card">
+                <strong>1. Modelo: Gpt-oss</strong><br>
+                <a href="https://drive.google.com/file/d/10DRE8VIwJp2F8Ph8WUOvYqTQ0U5D1Ya4/view?usp=sharing" target="_blank" class="btn-download">💾 Ver Código Fuente</a>
+                <br><img src="images/image25.png" alt="Compilación GPT">
+            </div>
+             <div class="evidence-card">
+                <strong>2. Modelo: Qwen3-vl</strong><br>
+                <a href="https://drive.google.com/file/d/1vBr9CgtmnLG0vWuIAUTstfvLLbCuewrd/view?usp=sharing" target="_blank" class="btn-download">💾 Ver Código Fuente</a>
+            </div>
         </div>
-    </section>
 
-    <section>
-        <h3>PROMPT 3: Sistema CRUD de Empleados</h3>
-        <div class="prompt-desc">
-            "Sistema de gestión de empleados con menú en consola y persistencia en archivo binario data.dat."
+        <h3 id="prompt3">PROMPT 3: Sistema CRUD de Empleados</h3>
+        <div class="prompt-box">
+            <strong>Prompt Utilizado:</strong><br>
+            [cite_start]"Create a Java program to implement a CRUD (Create, Read, Update, Delete) function for employees. Each employee must have an integer identifier, a name, a salary, an address, an email address, and a phone number. The program should display a console menu so the user can select the desired option. The program should use a binary file named data.dat to store the employee information. The entire program must be contained in a single file named Prompt3.java." [cite: 565]
         </div>
 
         <table>
-            <thead>
-                <tr>
-                    <th>Modelo</th>
-                    <th>For</th>
-                    <th>While</th>
-                    <th>Do While</th>
-                    <th>Switch</th>
-                    <th>If</th>
-                </tr>
-            </thead>
+            <thead><tr><th>Modelo</th><th>For</th><th>While</th><th>Do While</th><th>Switch</th><th>If</th></tr></thead>
             <tbody>
                 <tr><td>Gpt-oss</td><td>3</td><td>4</td><td>0</td><td>0</td><td>10</td></tr>
                 <tr><td>Qwen3-vl</td><td>2</td><td>0</td><td>1</td><td>1</td><td>5</td></tr>
@@ -315,30 +188,26 @@
             </tbody>
         </table>
 
-        <div class="evidence">
-            <p><strong>Ejemplo: Gpt-oss (CRUD)</strong></p>
-            <img src="images/image30.png" alt="Código">
-            <img src="images/image11.png" alt="Compilación">
+        <div class="evidence-grid">
+            <div class="evidence-card">
+                <strong>1. Modelo: Gpt-oss</strong><br>
+                <a href="https://drive.google.com/file/d/132GocVnsKWiBQjXqgNMy1--9wf_AHMEu/view?usp=sharing" target="_blank" class="btn-download">💾 Ver Código Fuente</a>
+                <br><img src="images/image11.png" alt="Compilación GPT">
+            </div>
+             <div class="evidence-card">
+                <strong>2. Modelo: Qwen3-vl</strong><br>
+                <a href="https://drive.google.com/file/d/1PoJktc05T4xAYBHola4xW4HzGXx848MZ/view?usp=sharing" target="_blank" class="btn-download">💾 Ver Código Fuente</a>
+            </div>
         </div>
-    </section>
 
-    <section>
-        <h3>PROMPT 4: Animación Swing</h3>
-        <div class="prompt-desc">
-            "Aplicación visual con animación de un círculo rojo rebotando en un rectángulo."
+        <h3 id="prompt4">PROMPT 4: Animación Gráfica (Swing)</h3>
+        <div class="prompt-box">
+            <strong>Prompt Utilizado:</strong><br>
+            [cite_start]"Create a Java program that builds an application using a Windows window with the Swing visual component library. The application should display an animation of a red circle bouncing inside a white rectangle. The rectangle should be centered within the Windows window. The generated program should be contained in a single file named Prompt4.java." [cite: 727]
         </div>
 
         <table>
-            <thead>
-                <tr>
-                    <th>Modelo</th>
-                    <th>For</th>
-                    <th>While</th>
-                    <th>Do While</th>
-                    <th>Switch</th>
-                    <th>If</th>
-                </tr>
-            </thead>
+            <thead><tr><th>Modelo</th><th>For</th><th>While</th><th>Do While</th><th>Switch</th><th>If</th></tr></thead>
             <tbody>
                 <tr><td>Gpt-oss</td><td>0</td><td>0</td><td>0</td><td>0</td><td>4</td></tr>
                 <tr><td>Qwen3-vl</td><td>0</td><td>0</td><td>0</td><td>0</td><td>4</td></tr>
@@ -347,31 +216,27 @@
                 <tr><td>Gemma 3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
             </tbody>
         </table>
-        
-        <div class="evidence">
-            <p><strong>Ejemplo: Gpt-oss (Swing)</strong></p>
-            <img src="images/image12.png" alt="Código">
-            <img src="images/image49.png" alt="Compilación">
-        </div>
-    </section>
 
-    <section>
-        <h3>PROMPT 5: Operaciones Matriciales (50x50)</h3>
-        <div class="prompt-desc">
-            "Matriz 50x50: Calcular transpuesta, traza y determinante."
+        <div class="evidence-grid">
+            <div class="evidence-card">
+                <strong>1. Modelo: Gpt-oss</strong><br>
+                <a href="https://drive.google.com/file/d/1k6bDww6mBxQtoAuj7S47XzbpMtyp25rn/view?usp=sharing" target="_blank" class="btn-download">💾 Ver Código Fuente</a>
+                <br><img src="images/image49.png" alt="Compilación GPT">
+            </div>
+             <div class="evidence-card">
+                <strong>2. Modelo: Qwen3-vl</strong><br>
+                <a href="https://drive.google.com/file/d/1QMVOHrOOHvmOTBFRdVZa8Ltp5NDlzm6F/view?usp=sharing" target="_blank" class="btn-download">💾 Ver Código Fuente</a>
+            </div>
+        </div>
+
+        <h3 id="prompt5">PROMPT 5: Operaciones Matriciales (50x50)</h3>
+        <div class="prompt-box">
+            <strong>Prompt Utilizado:</strong><br>
+            [cite_start]"Write a Java program that creates a square matrix of integers, with 50 rows and 50 columns, and fills it with random integer values between 1 and 1000. Then, generate and print the transpose of this matrix, calculate and print its trace, and calculate and print its determinant. The entire program must be contained in a single file named Prompt5.java." [cite: 871]
         </div>
 
         <table>
-            <thead>
-                <tr>
-                    <th>Modelo</th>
-                    <th>For</th>
-                    <th>While</th>
-                    <th>Do While</th>
-                    <th>Switch</th>
-                    <th>If</th>
-                </tr>
-            </thead>
+            <thead><tr><th>Modelo</th><th>For</th><th>While</th><th>Do While</th><th>Switch</th><th>If</th></tr></thead>
             <tbody>
                 <tr><td>Gpt-oss</td><td>11</td><td>0</td><td>0</td><td>0</td><td>3</td></tr>
                 <tr><td>Qwen3-vl</td><td colspan="5"><em>Error: Fallo en generación (validaciones excesivas)</em></td></tr>
@@ -381,15 +246,18 @@
             </tbody>
         </table>
 
-        <div class="evidence">
-            <p><strong>Ejemplo Exitoso: Gpt-oss</strong></p>
-            <img src="images/image39.png" alt="Código">
-            <img src="images/image52.png" alt="Compilación">
-        </div>
-        <div class="evidence">
-            <p><strong>Ejemplo Fallido: Qwen3-vl</strong></p>
-            <p><em>Nota: El modelo no logró generar código funcional debido a falta de contexto.</em></p>
-            <img src="images/image51.png" alt="Fallo Qwen">
+        <div class="evidence-grid">
+            <div class="evidence-card">
+                <strong>1. Modelo: Gpt-oss (Éxito)</strong><br>
+                <a href="https://drive.google.com/file/d/1Iz8C-GanOWsNPHN1K1XlTY9pRj6kwGKE/view?usp=sharing" target="_blank" class="btn-download">💾 Ver Código Fuente</a>
+                <br><img src="images/image52.png" alt="Compilación GPT">
+            </div>
+            <div class="evidence-card">
+                <strong>2. Modelo: Qwen3-vl (Fallo)</strong><br>
+                <p><em>Nota: El modelo no logró generar código funcional debido a falta de contexto.</em></p>
+                <a href="https://drive.google.com/file/d/1yBrDoKREaaGxzYrkpBGTo9gNyAfsdg1q/view?usp=sharing" target="_blank" class="btn-download">💾 Ver Intento de Código</a>
+                <br><img src="images/image51.png" alt="Fallo Qwen">
+            </div>
         </div>
     </section>
 
@@ -404,7 +272,7 @@
             <li><strong>Complejidad Algorítmica (Operaciones Matriciales):</strong> Las tareas algorítmicamente complejas (PROMPT 5) fueron un claro diferenciador. Modelos como Gpt-oss y Qwen3-coder demostraron ser más robustos para generar código funcional, mientras que Qwen3-vl y Deepseek-r1 tendieron a fallar o detenerse en validaciones excesivas antes de completar la lógica central (cálculo de determinante).</li>
         </ol>
         
-        <p>En resumen, la competencia de los LLM en código funcional es alta, pero su capacidad para generar algoritmos complejos de manera confiable está concentrada en los modelos más avanzados (Gpt-oss y Qwen3-coder), los cuales exhibieron un uso más intensivo y adecuado de las estructuras de control anidadas.</p>
+        <p>En resumen, la competencia de los LLM en código funcional es alta, pero su capacidad para generar algoritmos complejos de manera confiable está concentrada en los modelos más avanzados (Gpt-oss y Qwen3-coder).</p>
     </section>
 
     <footer>
