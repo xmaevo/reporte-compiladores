@@ -6,9 +6,9 @@
     <title>Reporte Final: Análisis de Código LLMs</title>
     <style>
         :root {
-            --primary: #1b3a57; /* Azul Institucional Oscuro */
+            --primary: #1b3a57;
             --secondary: #2c3e50;
-            --accent: #c0392b; /* Rojo Institucional */
+            --accent: #c0392b;
             --light: #f8f9fa;
             --border: #dee2e6;
         }
@@ -31,7 +31,7 @@
             border-radius: 8px;
         }
 
-        /* --- ESTILOS DE PORTADA Y PRESENTACIÓN --- */
+        /* --- ESTILOS DE PORTADA --- */
         header {
             text-align: center;
             border-bottom: 4px solid var(--primary);
@@ -47,11 +47,7 @@
             padding: 0 20px;
         }
 
-        .logos img {
-            height: 70px;
-            width: auto;
-            object-fit: contain;
-        }
+        .logos img { height: 70px; width: auto; object-fit: contain; }
 
         h1 {
             color: var(--primary);
@@ -61,12 +57,7 @@
             letter-spacing: 1px;
         }
 
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--secondary);
-            font-weight: 300;
-            margin-bottom: 5px;
-        }
+        .subtitle { font-size: 1.2rem; color: var(--secondary); font-weight: 300; margin-bottom: 5px; }
 
         .presentation-card {
             background-color: var(--light);
@@ -89,31 +80,14 @@
             padding-bottom: 5px;
         }
 
-        .presentation-group ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+        .presentation-group ul { list-style: none; padding: 0; margin: 0; }
+        .presentation-group li { margin-bottom: 5px; font-size: 0.95rem; }
 
-        .presentation-group li {
-            margin-bottom: 5px;
-            font-size: 0.95rem;
-        }
-
-        .presentation-group strong {
-            color: #000;
-        }
-
-        /* --- ESTILOS DE CONTENIDO --- */
+        /* --- CONTENIDO --- */
         section { margin-bottom: 50px; }
 
-        h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 10px;
-            margin-top: 50px;
-        }
-
+        h2 { color: var(--primary); border-bottom: 2px solid var(--border); padding-bottom: 10px; margin-top: 50px; }
+        
         h3.prompt-title {
             background: var(--primary);
             color: white;
@@ -123,7 +97,7 @@
             font-size: 1.3rem;
         }
 
-        /* Caja del Prompt */
+        /* Prompt Box */
         .prompt-box {
             background-color: #fff9db;
             border: 1px solid #ffeeba;
@@ -131,63 +105,21 @@
             border-radius: 6px;
             margin: 20px 0;
             color: #444;
-            position: relative;
         }
-        
-        .prompt-desc {
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px dashed #ccc;
-        }
-        
-        .prompt-code {
-            font-family: 'Consolas', monospace;
-            font-size: 0.95em;
-            color: #2c3e50;
-            background: #fff;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #eee;
-        }
+        .prompt-desc { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px dashed #ccc; font-style: italic; }
+        .prompt-code { font-family: 'Consolas', monospace; font-size: 0.95em; color: #2c3e50; background: #fff; padding: 10px; border-radius: 4px; border: 1px solid #eee; }
 
         /* Tablas */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-
-        th, td {
-            padding: 12px 15px;
-            text-align: center;
-            border-bottom: 1px solid var(--border);
-        }
-
-        th {
-            background-color: var(--secondary);
-            color: white;
-            font-weight: 500;
-        }
-
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        th, td { padding: 12px 15px; text-align: center; border-bottom: 1px solid var(--border); }
+        th { background-color: var(--secondary); color: white; font-weight: 500; }
         tr:nth-child(even) { background-color: #f8f9fa; }
         tr:hover { background-color: #e2e6ea; }
 
         /* Evidencias */
-        .evidence-container {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            margin-top: 30px;
-        }
-
-        .model-evidence {
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-            background: white;
-        }
-
+        .evidence-container { display: flex; flex-direction: column; gap: 40px; margin-top: 30px; }
+        .model-evidence { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: white; }
+        
         .model-header {
             background-color: #e9ecef;
             padding: 10px 20px;
@@ -197,58 +129,72 @@
             justify-content: space-between;
             align-items: center;
         }
+        .model-header a { font-size: 0.8rem; text-decoration: none; color: white; background-color: var(--primary); padding: 5px 10px; border-radius: 4px; transition: background 0.3s; }
+        .model-header a:hover { background-color: var(--accent); }
 
-        .model-header a {
-            font-size: 0.8rem;
-            text-decoration: none;
-            color: white;
-            background-color: var(--primary);
-            padding: 5px 10px;
-            border-radius: 4px;
-        }
-
-        .images-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-        }
-
-        .img-block {
-            padding: 15px;
-            text-align: center;
-            border-right: 1px solid #eee;
-        }
-        
+        .images-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+        .img-block { padding: 15px; text-align: center; border-right: 1px solid #eee; }
         .img-block:last-child { border-right: none; }
-
-        .img-label {
-            display: block;
-            font-size: 0.85rem;
-            color: #777;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
+        .img-label { display: block; font-size: 0.85rem; color: #777; margin-bottom: 8px; text-transform: uppercase; font-weight: bold; }
 
         img {
             max-width: 100%;
             height: auto;
             border: 1px solid #ddd;
             box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: zoom-in; /* Cursor de lupa */
         }
-        
-        img:hover { transform: scale(1.02); }
+        img:hover { transform: scale(1.02); box-shadow: 4px 4px 12px rgba(0,0,0,0.15); }
+
+        /* --- LIGHTBOX (ZOOM) --- */
+        .lightbox {
+            display: none; /* Hidden by default */
+            position: fixed; 
+            z-index: 1000; 
+            padding-top: 50px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+            backdrop-filter: blur(5px);
+        }
+
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 1200px;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 5px;
+            animation-name: zoom;
+            animation-duration: 0.3s;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .close:hover, .close:focus { color: var(--accent); text-decoration: none; cursor: pointer; }
+
+        @keyframes zoom {
+            from {transform:scale(0.8); opacity: 0;} 
+            to {transform:scale(1); opacity: 1;}
+        }
 
         /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 80px;
-            padding-top: 20px;
-            border-top: 1px solid #ccc;
-            color: #666;
-            font-size: 0.9rem;
-        }
+        footer { text-align: center; margin-top: 80px; padding-top: 20px; border-top: 1px solid #ccc; color: #666; font-size: 0.9rem; }
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -257,10 +203,16 @@
             .presentation-card { grid-template-columns: 1fr; }
             .images-grid { grid-template-columns: 1fr; }
             .img-block { border-right: none; border-bottom: 1px solid #eee; }
+            .lightbox-content { width: 95%; }
         }
     </style>
 </head>
 <body>
+
+<div id="myLightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-content" id="img01">
+</div>
 
 <div class="container">
     
@@ -315,14 +267,9 @@
         <h2>3. Resultados Experimentales</h2>
 
         <h3 class="prompt-title">PROMPT 1: Estadística de Arreglos</h3>
-        
         <div class="prompt-box">
-            <div class="prompt-desc">
-                Genera un programa en java, el cual debe llenar un arreglo de enteros con 200 valores enteros aleatorios. Los valores aleatorios deben estar en el rango de 1 a 1000. El programa debe imprimir los 200 valores en consola, clcular la moda e imprimirla, calcular la mediana e imprimirla, calcular la media e imprimirla. El programa generado debe estar contenido en un solo archivo con nombre Prompt1.java
-            </div>
-            <div class="prompt-code">
-                Write a Java program that fills an array of integers with 200 random integer values. The random values must be in the range of 1 to 1000. The program should print the 200 values to the console, calculate and print the mode, calculate and print the median, and calculate and print the mean. The generated program must be contained in a single file named Prompt1.java
-            </div>
+            <div class="prompt-desc">Genera un programa en java... calcular la moda e imprimirla, calcular la mediana... (El programa generado debe estar contenido en un solo archivo Prompt1.java)</div>
+            <div class="prompt-code">Write a Java program that fills an array of integers with 200 random integer values. The random values must be in the range of 1 to 1000. The program should print the 200 values to the console, calculate and print the mode, calculate and print the median, and calculate and print the mean. The generated program must be contained in a single file named Prompt1.java</div>
         </div>
 
         <table>
@@ -338,100 +285,46 @@
 
         <div class="evidence-container">
             <div class="model-evidence">
-                <div class="model-header">
-                    1. Gpt-oss
-                    <a href="https://drive.google.com/file/d/1zmcFb9_0hi7qUfDmxMRx2dZagXnhVYl0/view?usp=sharing" target="_blank">🔗 Ver Código</a>
-                </div>
+                <div class="model-header">1. Gpt-oss <a href="https://drive.google.com/file/d/1zmcFb9_0hi7qUfDmxMRx2dZagXnhVYl0/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
-                    <div class="img-block">
-                        <span class="img-label">Código Generado</span>
-                        <img src="images/image28.png" alt="Código GPT">
-                    </div>
-                    <div class="img-block">
-                        <span class="img-label">Compilación</span>
-                        <img src="images/image24.png" alt="Compilación GPT">
-                    </div>
+                    <div class="img-block"><span class="img-label">Código Generado</span><img src="images/image28.png" alt="Código GPT"></div>
+                    <div class="img-block"><span class="img-label">Compilación</span><img src="images/image24.png" alt="Compilación GPT"></div>
                 </div>
             </div>
-
             <div class="model-evidence">
-                <div class="model-header">
-                    2. Qwen3-vl
-                    <a href="https://drive.google.com/file/d/1oFPlEZTWw-wBz6MyElcI8T9CaPV71QOj/view?usp=sharing" target="_blank">🔗 Ver Código</a>
-                </div>
+                <div class="model-header">2. Qwen3-vl <a href="https://drive.google.com/file/d/1oFPlEZTWw-wBz6MyElcI8T9CaPV71QOj/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
-                    <div class="img-block">
-                        <span class="img-label">Código Generado</span>
-                        <img src="images/image44.png" alt="Código Qwen">
-                    </div>
-                    <div class="img-block">
-                        <span class="img-label">Compilación</span>
-                        <img src="images/image53.png" alt="Compilación Qwen">
-                    </div>
+                    <div class="img-block"><span class="img-label">Código Generado</span><img src="images/image44.png" alt="Código Qwen"></div>
+                    <div class="img-block"><span class="img-label">Compilación</span><img src="images/image53.png" alt="Compilación Qwen"></div>
                 </div>
             </div>
-
             <div class="model-evidence">
-                <div class="model-header">
-                    3. Deepseek-r1
-                    <a href="https://drive.google.com/file/d/1Ivi7eIKXrrKcrw_cWE-E21lyTz6MweCg/view?usp=sharing" target="_blank">🔗 Ver Código</a>
-                </div>
+                <div class="model-header">3. Deepseek-r1 <a href="https://drive.google.com/file/d/1Ivi7eIKXrrKcrw_cWE-E21lyTz6MweCg/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
-                    <div class="img-block">
-                        <span class="img-label">Código Generado</span>
-                        <img src="images/image29.png" alt="Código Deepseek">
-                    </div>
-                    <div class="img-block">
-                        <span class="img-label">Compilación</span>
-                        <img src="images/image33.png" alt="Compilación Deepseek">
-                    </div>
+                    <div class="img-block"><span class="img-label">Código Generado</span><img src="images/image29.png" alt="Código Deepseek"></div>
+                    <div class="img-block"><span class="img-label">Compilación</span><img src="images/image33.png" alt="Compilación Deepseek"></div>
                 </div>
             </div>
-
             <div class="model-evidence">
-                <div class="model-header">
-                    4. Qwen3-coder
-                    <a href="https://drive.google.com/file/d/1Gsidunds7_6eltZh_17mUBuXfOX0xlfR/view?usp=sharing" target="_blank">🔗 Ver Código</a>
-                </div>
+                <div class="model-header">4. Qwen3-coder <a href="https://drive.google.com/file/d/1Gsidunds7_6eltZh_17mUBuXfOX0xlfR/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
-                    <div class="img-block">
-                        <span class="img-label">Código Generado</span>
-                        <img src="images/image55.png" alt="Código QwenCoder">
-                    </div>
-                    <div class="img-block">
-                        <span class="img-label">Compilación</span>
-                        <img src="images/image22.png" alt="Compilación QwenCoder">
-                    </div>
+                    <div class="img-block"><span class="img-label">Código Generado</span><img src="images/image55.png" alt="Código QwenCoder"></div>
+                    <div class="img-block"><span class="img-label">Compilación</span><img src="images/image22.png" alt="Compilación QwenCoder"></div>
                 </div>
             </div>
-
             <div class="model-evidence">
-                <div class="model-header">
-                    5. Gemma 3
-                    <a href="https://drive.google.com/file/d/1axJmm-3JzRf_FdhA2GmHYQWPejhhyMte/view?usp=sharing" target="_blank">🔗 Ver Código</a>
-                </div>
+                <div class="model-header">5. Gemma 3 <a href="https://drive.google.com/file/d/1axJmm-3JzRf_FdhA2GmHYQWPejhhyMte/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
-                    <div class="img-block">
-                        <span class="img-label">Código Generado</span>
-                        <img src="images/image9.png" alt="Código Gemma">
-                    </div>
-                    <div class="img-block">
-                        <span class="img-label">Compilación</span>
-                        <img src="images/image7.png" alt="Compilación Gemma">
-                    </div>
+                    <div class="img-block"><span class="img-label">Código Generado</span><img src="images/image9.png" alt="Código Gemma"></div>
+                    <div class="img-block"><span class="img-label">Compilación</span><img src="images/image7.png" alt="Compilación Gemma"></div>
                 </div>
             </div>
         </div>
 
         <h3 class="prompt-title">PROMPT 2: Ordenamiento Quicksort</h3>
-        
         <div class="prompt-box">
-            <div class="prompt-desc">
-                Genera un programa en java, el cual debe llenar un arreglo de enteros con 200 valores enteros aleatorios. Los valores aleatorios deben estar en el rango de 1 a 1000. Ordena el arreglo empleando el método quicksort e imprimir el arreglo ordenado. El programa generado debe estar contenido en un solo archivo con nombre Prompt2.java
-            </div>
-            <div class="prompt-code">
-                Write a Java program that fills an array of integers with 200 random integer values. The random values must be in the range of 1 to 1000. Sort the array using the quicksort method and print the sorted array. The generated program must be contained in a single file named Prompt2.java
-            </div>
+            <div class="prompt-desc">Genera un programa en java... Ordena el arreglo empleando el método quicksort...</div>
+            <div class="prompt-code">Write a Java program that fills an array of integers with 200 random integer values. The random values must be in the range of 1 to 1000. Sort the array using the quicksort method and print the sorted array. The generated program must be contained in a single file named Prompt2.java</div>
         </div>
 
         <table>
@@ -484,14 +377,9 @@
         </div>
 
         <h3 class="prompt-title">PROMPT 3: Sistema CRUD de Empleados</h3>
-        
         <div class="prompt-box">
-            <div class="prompt-desc">
-                Genera un programa en java, para implementar un CRUD de empleados. Cada empleado debe tener un número de identificador entero, un nombre, un salario, una dirección, un correo electrónico y un teléfono. El programa generado debe construir un menú de opciones por consola para que el usuario pueda escoger la opción deseda. El programa debe usar un archivo binario de nombre data.dat para almacenar la información de los empleados. El programa generado debe estar contenido en un solo archivo con nombre Prompt3.java
-            </div>
-            <div class="prompt-code">
-                Create a Java program to implement a CRUD (Create, Read, Update, Delete) function for employees. Each employee must have an integer identifier, a name, a salary, an address, an email address, and a phone number. The program should display a console menu so the user can select the desired option. The program should use a binary file named data.dat to store the employee information. The entire program must be contained in a single file named Prompt3.java.
-            </div>
+            <div class="prompt-desc">Genera un programa en java, para implementar un CRUD de empleados... construir un menú de opciones... archivo binario data.dat...</div>
+            <div class="prompt-code">Create a Java program to implement a CRUD (Create, Read, Update, Delete) function for employees. Each employee must have an integer identifier, a name, a salary, an address, an email address, and a phone number. The program should display a console menu so the user can select the desired option. The program should use a binary file named data.dat to store the employee information. The entire program must be contained in a single file named Prompt3.java.</div>
         </div>
 
         <table>
@@ -544,14 +432,9 @@
         </div>
 
         <h3 class="prompt-title">PROMPT 4: Animación Gráfica (Swing)</h3>
-        
         <div class="prompt-box">
-            <div class="prompt-desc">
-                Genera un programa en java, que construya una aplicación empleando una ventana de windows con la librería de componentes visuales Swing. La aplicación debe mostrar una animación de un círculo rojo rebotando dentro de un rectángulo blanco. El rectángulo debe estar centrado en la ventana de windows. El programa generado debe estar contenido en un solo archivo con nombre Prompt4.java
-            </div>
-            <div class="prompt-code">
-                Create a Java program that builds an application using a Windows window with the Swing visual component library. The application should display an animation of a red circle bouncing inside a white rectangle. The rectangle should be centered within the Windows window. The generated program should be contained in a single file named Prompt4.java.
-            </div>
+            <div class="prompt-desc">Genera un programa en java... animación de un círculo rojo rebotando...</div>
+            <div class="prompt-code">Create a Java program that builds an application using a Windows window with the Swing visual component library. The application should display an animation of a red circle bouncing inside a white rectangle. The rectangle should be centered within the Windows window. The generated program should be contained in a single file named Prompt4.java.</div>
         </div>
 
         <table>
@@ -604,14 +487,9 @@
         </div>
 
         <h3 class="prompt-title">PROMPT 5: Operaciones Matriciales (50x50)</h3>
-        
         <div class="prompt-box">
-            <div class="prompt-desc">
-                Genera un programa en java, que construya una matriz cuadrada de enteros, de 50 renglones y 50 columnas, que llene dicha matriz con valores aleatorios enteros entre 1 y 1000. A partir de dicha matriz debe generar su transpuesta e imprimirla. Calcular su traza e imprimirla, construir su determinante e imprimirlo. El programa generado debe estar contenido en un solo archivo con nombre Prompt5.java
-            </div>
-            <div class="prompt-code">
-                Write a Java program that creates a square matrix of integers, with 50 rows and 50 columns, and fills it with random integer values between 1 and 1000. Then, generate and print the transpose of this matrix, calculate and print its trace, and calculate and print its determinant. The entire program must be contained in a single file named Prompt5.java.
-            </div>
+            <div class="prompt-desc">Genera un programa en java, que construya una matriz cuadrada de enteros... transpuesta, traza, determinante...</div>
+            <div class="prompt-code">Write a Java program that creates a square matrix of integers, with 50 rows and 50 columns, and fills it with random integer values between 1 and 1000. Then, generate and print the transpose of this matrix, calculate and print its trace, and calculate and print its determinant. The entire program must be contained in a single file named Prompt5.java.</div>
         </div>
 
         <table>
@@ -687,6 +565,38 @@
         <p>Reporte generado para la materia de Lenguajes y Autómatas II | Morelia, Michoacán</p>
     </footer>
 </div>
+
+<script>
+    // Obtener elementos
+    var lightbox = document.getElementById("myLightbox");
+    var lightboxImg = document.getElementById("img01");
+    var closeBtn = document.getElementsByClassName("close")[0];
+
+    // Seleccionar todas las imágenes dentro de .images-grid
+    var imgs = document.querySelectorAll(".images-grid img");
+
+    // Asignar evento click a cada imagen
+    imgs.forEach(function(img) {
+        img.onclick = function() {
+            lightbox.style.display = "flex";
+            lightbox.style.justifyContent = "center";
+            lightbox.style.alignItems = "center";
+            lightboxImg.src = this.src;
+        }
+    });
+
+    // Cerrar al dar click en la X
+    closeBtn.onclick = function() { 
+        lightbox.style.display = "none"; 
+    }
+
+    // Cerrar al dar click fuera de la imagen
+    lightbox.onclick = function(e) {
+        if(e.target !== lightboxImg) {
+            lightbox.style.display = "none";
+        }
+    }
+</script>
 
 </body>
 </html>
