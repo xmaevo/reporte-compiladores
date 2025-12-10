@@ -130,17 +130,24 @@
             padding: 20px;
             border-radius: 6px;
             margin: 20px 0;
-            font-style: italic;
-            color: #555;
+            color: #444;
             position: relative;
         }
-        .prompt-box::before {
-            content: "📝 PROMPT:";
-            font-weight: bold;
-            font-style: normal;
-            display: block;
-            margin-bottom: 8px;
-            color: #856404;
+        
+        .prompt-desc {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #ccc;
+        }
+        
+        .prompt-code {
+            font-family: 'Consolas', monospace;
+            font-size: 0.95em;
+            color: #2c3e50;
+            background: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #eee;
         }
 
         /* Tablas */
@@ -202,7 +209,7 @@
 
         .images-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Dos columnas para código y compilación */
+            grid-template-columns: 1fr 1fr;
             gap: 0;
         }
 
@@ -310,7 +317,12 @@
         <h3 class="prompt-title">PROMPT 1: Estadística de Arreglos</h3>
         
         <div class="prompt-box">
-            Genera un programa en java, el cual debe llenar un arreglo de enteros con 200 valores enteros aleatorios... (Write a Java program that fills an array of integers with 200 random integer values...)
+            <div class="prompt-desc">
+                Genera un programa en java, el cual debe llenar un arreglo de enteros con 200 valores enteros aleatorios. Los valores aleatorios deben estar en el rango de 1 a 1000. El programa debe imprimir los 200 valores en consola, clcular la moda e imprimirla, calcular la mediana e imprimirla, calcular la media e imprimirla. El programa generado debe estar contenido en un solo archivo con nombre Prompt1.java
+            </div>
+            <div class="prompt-code">
+                Write a Java program that fills an array of integers with 200 random integer values. The random values must be in the range of 1 to 1000. The program should print the 200 values to the console, calculate and print the mode, calculate and print the median, and calculate and print the mean. The generated program must be contained in a single file named Prompt1.java
+            </div>
         </div>
 
         <table>
@@ -412,8 +424,14 @@
         </div>
 
         <h3 class="prompt-title">PROMPT 2: Ordenamiento Quicksort</h3>
+        
         <div class="prompt-box">
-            Genera un programa en java... Ordena el arreglo empleando el método quicksort... (Sort the array using the quicksort method...)
+            <div class="prompt-desc">
+                Genera un programa en java, el cual debe llenar un arreglo de enteros con 200 valores enteros aleatorios. Los valores aleatorios deben estar en el rango de 1 a 1000. Ordena el arreglo empleando el método quicksort e imprimir el arreglo ordenado. El programa generado debe estar contenido en un solo archivo con nombre Prompt2.java
+            </div>
+            <div class="prompt-code">
+                Write a Java program that fills an array of integers with 200 random integer values. The random values must be in the range of 1 to 1000. Sort the array using the quicksort method and print the sorted array. The generated program must be contained in a single file named Prompt2.java
+            </div>
         </div>
 
         <table>
@@ -429,35 +447,35 @@
 
         <div class="evidence-container">
             <div class="model-evidence">
-                <div class="model-header">1. Gpt-oss</div>
+                <div class="model-header">1. Gpt-oss <a href="https://drive.google.com/file/d/10DRE8VIwJp2F8Ph8WUOvYqTQ0U5D1Ya4/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image58.png" alt="Cod"></div>
                     <div class="img-block"><img src="images/image25.png" alt="Comp"></div>
                 </div>
             </div>
             <div class="model-evidence">
-                <div class="model-header">2. Qwen3-vl</div>
+                <div class="model-header">2. Qwen3-vl <a href="https://drive.google.com/file/d/1vBr9CgtmnLG0vWuIAUTstfvLLbCuewrd/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image47.png" alt="Cod"></div>
                     <div class="img-block"><img src="images/image32.png" alt="Comp"></div>
                 </div>
             </div>
             <div class="model-evidence">
-                <div class="model-header">3. Deepseek-r1</div>
+                <div class="model-header">3. Deepseek-r1 <a href="https://drive.google.com/file/d/1pflnvd8jOOvN8r-LoFPVAyDWw1s60UyF/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image19.png" alt="Cod"></div>
                     <div class="img-block"><img src="images/image37.png" alt="Comp"></div>
                 </div>
             </div>
             <div class="model-evidence">
-                <div class="model-header">4. Qwen3-coder</div>
+                <div class="model-header">4. Qwen3-coder <a href="https://drive.google.com/file/d/1F0kXg15tb36WoQSAsRpgxKmjQEKYhI4l/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image54.png" alt="Cod"></div>
                     <div class="img-block"><img src="images/image45.png" alt="Comp"></div>
                 </div>
             </div>
             <div class="model-evidence">
-                <div class="model-header">5. Gemma 3</div>
+                <div class="model-header">5. Gemma 3 <a href="https://drive.google.com/file/d/1WKzgGLqjMYF03Blt6nQd627XhOhVze22/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image26.png" alt="Cod"></div>
                     <div class="img-block"><img src="images/image6.png" alt="Comp"></div>
@@ -465,8 +483,16 @@
             </div>
         </div>
 
-        <h3 class="prompt-title">PROMPT 3: CRUD de Empleados</h3>
-        <div class="prompt-box">Implementar un CRUD de empleados... archivo binario data.dat... (Create a Java program to implement a CRUD...)</div>
+        <h3 class="prompt-title">PROMPT 3: Sistema CRUD de Empleados</h3>
+        
+        <div class="prompt-box">
+            <div class="prompt-desc">
+                Genera un programa en java, para implementar un CRUD de empleados. Cada empleado debe tener un número de identificador entero, un nombre, un salario, una dirección, un correo electrónico y un teléfono. El programa generado debe construir un menú de opciones por consola para que el usuario pueda escoger la opción deseda. El programa debe usar un archivo binario de nombre data.dat para almacenar la información de los empleados. El programa generado debe estar contenido en un solo archivo con nombre Prompt3.java
+            </div>
+            <div class="prompt-code">
+                Create a Java program to implement a CRUD (Create, Read, Update, Delete) function for employees. Each employee must have an integer identifier, a name, a salary, an address, an email address, and a phone number. The program should display a console menu so the user can select the desired option. The program should use a binary file named data.dat to store the employee information. The entire program must be contained in a single file named Prompt3.java.
+            </div>
+        </div>
 
         <table>
             <thead><tr><th>Modelo</th><th>For</th><th>While</th><th>Do While</th><th>Switch</th><th>If</th></tr></thead>
@@ -481,35 +507,35 @@
 
         <div class="evidence-container">
             <div class="model-evidence">
-                <div class="model-header">1. Gpt-oss</div>
+                <div class="model-header">1. Gpt-oss <a href="https://drive.google.com/file/d/132GocVnsKWiBQjXqgNMy1--9wf_AHMEu/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image30.png"></div>
                     <div class="img-block"><img src="images/image11.png"></div>
                 </div>
             </div>
             <div class="model-evidence">
-                <div class="model-header">2. Qwen3-vl</div>
+                <div class="model-header">2. Qwen3-vl <a href="https://drive.google.com/file/d/1PoJktc05T4xAYBHola4xW4HzGXx848MZ/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image50.png"></div>
                     <div class="img-block"><img src="images/image27.png"></div>
                 </div>
             </div>
              <div class="model-evidence">
-                <div class="model-header">3. Deepseek-r1</div>
+                <div class="model-header">3. Deepseek-r1 <a href="https://drive.google.com/file/d/1kNFdDKYwi6-S6mrYBeWEh_UgZeyh2zlF/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image31.png"></div>
                     <div class="img-block"><img src="images/image57.png"></div>
                 </div>
             </div>
              <div class="model-evidence">
-                <div class="model-header">4. Qwen3-coder</div>
+                <div class="model-header">4. Qwen3-coder <a href="https://drive.google.com/file/d/1PqmJrZMPVTWGGH5z8OlHxoBZsc22SjIl/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image40.png"></div>
                     <div class="img-block"><img src="images/image15.png"></div>
                 </div>
             </div>
              <div class="model-evidence">
-                <div class="model-header">5. Gemma 3</div>
+                <div class="model-header">5. Gemma 3 <a href="https://drive.google.com/file/d/1wHvH6aJ3Ly0vPPdR15v-kflzr6HNf4-f/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image34.png"></div>
                     <div class="img-block"><img src="images/image41.png"></div>
@@ -517,8 +543,16 @@
             </div>
         </div>
 
-        <h3 class="prompt-title">PROMPT 4: Animación Swing</h3>
-        <div class="prompt-box">Aplicación visual... círculo rojo rebotando... (red circle bouncing inside a white rectangle...)</div>
+        <h3 class="prompt-title">PROMPT 4: Animación Gráfica (Swing)</h3>
+        
+        <div class="prompt-box">
+            <div class="prompt-desc">
+                Genera un programa en java, que construya una aplicación empleando una ventana de windows con la librería de componentes visuales Swing. La aplicación debe mostrar una animación de un círculo rojo rebotando dentro de un rectángulo blanco. El rectángulo debe estar centrado en la ventana de windows. El programa generado debe estar contenido en un solo archivo con nombre Prompt4.java
+            </div>
+            <div class="prompt-code">
+                Create a Java program that builds an application using a Windows window with the Swing visual component library. The application should display an animation of a red circle bouncing inside a white rectangle. The rectangle should be centered within the Windows window. The generated program should be contained in a single file named Prompt4.java.
+            </div>
+        </div>
 
         <table>
             <thead><tr><th>Modelo</th><th>For</th><th>While</th><th>Do While</th><th>Switch</th><th>If</th></tr></thead>
@@ -533,35 +567,35 @@
 
         <div class="evidence-container">
             <div class="model-evidence">
-                <div class="model-header">1. Gpt-oss</div>
+                <div class="model-header">1. Gpt-oss <a href="https://drive.google.com/file/d/1k6bDww6mBxQtoAuj7S47XzbpMtyp25rn/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image12.png"></div>
                     <div class="img-block"><img src="images/image49.png"></div>
                 </div>
             </div>
              <div class="model-evidence">
-                <div class="model-header">2. Qwen3-vl</div>
+                <div class="model-header">2. Qwen3-vl <a href="https://drive.google.com/file/d/1QMVOHrOOHvmOTBFRdVZa8Ltp5NDlzm6F/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image23.png"></div>
                     <div class="img-block"><img src="images/image18.png"></div>
                 </div>
             </div>
              <div class="model-evidence">
-                <div class="model-header">3. Deepseek-r1</div>
+                <div class="model-header">3. Deepseek-r1 <a href="https://drive.google.com/file/d/18CYz3NMxSfYln73lV7sE0sXwjwS34W6K/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image8.png"></div>
                     <div class="img-block"><img src="images/image38.png"></div>
                 </div>
             </div>
              <div class="model-evidence">
-                <div class="model-header">4. Qwen3-coder</div>
+                <div class="model-header">4. Qwen3-coder <a href="https://drive.google.com/file/d/1kXqsU3r0BV1JASvzxPVwPZj-bvsZyI0E/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image13.png"></div>
                     <div class="img-block"><img src="images/image4.png"></div>
                 </div>
             </div>
              <div class="model-evidence">
-                <div class="model-header">5. Gemma 3</div>
+                <div class="model-header">5. Gemma 3 <a href="https://drive.google.com/file/d/1gmIL50yafZlQMJFCxXcc2pbNRTTq3-JP/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image56.png"></div>
                     <div class="img-block"><img src="images/image20.png"></div>
@@ -569,8 +603,16 @@
             </div>
         </div>
 
-        <h3 class="prompt-title">PROMPT 5: Operaciones Matriciales</h3>
-        <div class="prompt-box">Matriz cuadrada 50x50... transpuesta, traza, determinante... (square matrix of integers... transpose... trace...)</div>
+        <h3 class="prompt-title">PROMPT 5: Operaciones Matriciales (50x50)</h3>
+        
+        <div class="prompt-box">
+            <div class="prompt-desc">
+                Genera un programa en java, que construya una matriz cuadrada de enteros, de 50 renglones y 50 columnas, que llene dicha matriz con valores aleatorios enteros entre 1 y 1000. A partir de dicha matriz debe generar su transpuesta e imprimirla. Calcular su traza e imprimirla, construir su determinante e imprimirlo. El programa generado debe estar contenido en un solo archivo con nombre Prompt5.java
+            </div>
+            <div class="prompt-code">
+                Write a Java program that creates a square matrix of integers, with 50 rows and 50 columns, and fills it with random integer values between 1 and 1000. Then, generate and print the transpose of this matrix, calculate and print its trace, and calculate and print its determinant. The entire program must be contained in a single file named Prompt5.java.
+            </div>
+        </div>
 
         <table>
             <thead><tr><th>Modelo</th><th>For</th><th>While</th><th>Do While</th><th>Switch</th><th>If</th></tr></thead>
@@ -585,7 +627,7 @@
 
         <div class="evidence-container">
             <div class="model-evidence">
-                <div class="model-header">1. Gpt-oss (Éxito)</div>
+                <div class="model-header">1. Gpt-oss (Éxito) <a href="https://drive.google.com/file/d/1Iz8C-GanOWsNPHN1K1XlTY9pRj6kwGKE/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image39.png"></div>
                     <div class="img-block"><img src="images/image52.png"></div>
@@ -593,7 +635,7 @@
             </div>
             
             <div class="model-evidence">
-                <div class="model-header" style="background-color: #f8d7da; color: #721c24;">2. Qwen3-vl (Fallo)</div>
+                <div class="model-header" style="background-color: #f8d7da; color: #721c24;">2. Qwen3-vl (Fallo) <a href="https://drive.google.com/file/d/1yBrDoKREaaGxzYrkpBGTo9gNyAfsdg1q/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image51.png"></div>
                     <div class="img-block" style="display:flex; align-items:center; justify-content:center; padding:20px;">
@@ -603,7 +645,7 @@
             </div>
 
             <div class="model-evidence">
-                <div class="model-header" style="background-color: #f8d7da; color: #721c24;">3. Deepseek-r1 (Fallo)</div>
+                <div class="model-header" style="background-color: #f8d7da; color: #721c24;">3. Deepseek-r1 (Fallo) <a href="https://drive.google.com/file/d/1rVlHPAyZW9xfgxszzYuqK2Y9KLJ6Viwi/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image21.png"></div>
                     <div class="img-block" style="display:flex; align-items:center; justify-content:center; padding:20px;">
@@ -613,7 +655,7 @@
             </div>
 
             <div class="model-evidence">
-                <div class="model-header">4. Qwen3-coder</div>
+                <div class="model-header">4. Qwen3-coder <a href="https://drive.google.com/file/d/1738WH-jjIOsRHdCsKB0vNduyMLPb9GfH/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image3.png"></div>
                     <div class="img-block"><img src="images/image2.png"></div>
@@ -621,7 +663,7 @@
             </div>
 
             <div class="model-evidence">
-                <div class="model-header">5. Gemma 3</div>
+                <div class="model-header">5. Gemma 3 <a href="https://drive.google.com/file/d/1TJ7fYj9RTCLODmyXD-w015RoeiEZyB_Q/view?usp=sharing" target="_blank">🔗 Ver Código</a></div>
                 <div class="images-grid">
                     <div class="img-block"><img src="images/image48.png"></div>
                     <div class="img-block"><img src="images/image35.png"></div>
